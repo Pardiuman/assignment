@@ -1,0 +1,23 @@
+version: 0.2
+
+env:
+  DOCKER_USERNAME:  "pardiuman"
+  DOCKER_PASSWORD: "dhankhar58"
+
+phases:
+  pre_build:
+    commands:
+      - echo "running test cases"
+      - python3 test-app.py
+      - echo "loggin into dockerhub registry"
+      - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+  
+  build:
+    commands:
+      - echo "starting build process"
+      - docker build -t pardiuman/pythonapp:1.0 .
+
+  post_build:
+    commands:
+      - echo "post build steps"
+      - docker push pardiuman/pythonapp:1.0
