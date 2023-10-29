@@ -9,6 +9,7 @@ phases:
     commands:
       - echo "running test cases"
       - python3 test-app.py
+      - echo $DOCKER_USERNAME
       - echo "loggin into dockerhub registry"
       - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
   
