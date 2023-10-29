@@ -3,7 +3,7 @@ version: 0.2
 env:
   variables:
     DOCKER_USERNAME:  "pardiuman"
-    DOCKER_PASSWORD: "dhankhar58"
+    DOCKER_PASSWORD: "password"
 
 phases:
   pre_build:
